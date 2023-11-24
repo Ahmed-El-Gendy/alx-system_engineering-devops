@@ -5,6 +5,7 @@ min=1
 hrs=0
 while (( hrs<=11 ))
 do
+	echo "Hour: $hrs"
 	while (( min<=59 ))
 	do
 		echo $min
@@ -13,5 +14,4 @@ do
 
 	((min=1))
 	((hrs++))
-	echo "Hour: $hrs"
 done
