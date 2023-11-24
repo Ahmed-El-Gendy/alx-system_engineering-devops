@@ -5,7 +5,7 @@ a=1
 while (( a<=20 ))
 do
 	echo $a
-	case (( a ))
+	case "$a" in
 		4)
 			echo "bad luck from China"
 			;;
