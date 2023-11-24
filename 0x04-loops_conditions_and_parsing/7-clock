@@ -3,7 +3,7 @@
 
 min=1
 hrs=0
-while (( hrs<=11 ))
+while (( hrs<=12 ))
 do
 	echo "Hour: $hrs"
 	while (( min<=59 ))
