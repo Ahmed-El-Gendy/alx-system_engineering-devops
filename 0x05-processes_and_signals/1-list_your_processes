@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#draw table of process
+ps auxf --forest
