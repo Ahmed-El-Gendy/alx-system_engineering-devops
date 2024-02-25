@@ -1,0 +1,6 @@
+# connect to a server without typing a password
+Host magic-server
+	Hostname 98.98.98.98
+	User ubuntu
+	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
