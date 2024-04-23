@@ -20,6 +20,6 @@ if __name__ == "__main__":
                     "username": name}
         lis.append(task_dic)
     dic[userId] = lis
-    filename = f"{userId}.csv"
+    filename = f"{userId}.json"
     with open(filename, 'w') as file:
         json.dump(dic, file)
