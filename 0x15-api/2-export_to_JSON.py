@@ -15,7 +15,7 @@ if __name__ == "__main__":
     dic = {}
     lis = []
     for task in todoj:
-        task_dic = { "task": task.get("title"),
+        task_dic = {"task": task.get("title"),
                     "completed": task.get("completed"),
                     "username": name}
         lis.append(task_dic)
