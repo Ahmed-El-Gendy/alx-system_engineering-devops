@@ -8,7 +8,7 @@ import sys
 
 if __name__ == "__main__":
     users = requests.get(f"https://jsonplaceholder.typicode.com/users")
-    users = user.json()
+    users = users.json()
     todo = requests.get(f"https://jsonplaceholder.typicode.com/todos")
     todoj = todo.json()
     dic = {}
