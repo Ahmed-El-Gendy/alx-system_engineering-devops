@@ -14,11 +14,10 @@ if __name__ == "__main__":
 
     filename = f"{userId}.csv"
     with open(filename, 'w', newline='') as file:
-        writer = csv.writer(file, quoting=csv.QUOTE_MINIMAL)
+        writer = csv.writer(file, delimiter=',', quotechar='"',
+                            quoting=csv.QUOTE_ALL, lineterminator='\n')
         for task in todoj:
             if task.get('userId') == int(userId):
                 a = task.get('completed')
                 b = task.get('title')
-                out = f'"{userId}","{name}","{a}","{b}"'
-                # print(out)
                 writer.writerow([userId, name, a, b])
