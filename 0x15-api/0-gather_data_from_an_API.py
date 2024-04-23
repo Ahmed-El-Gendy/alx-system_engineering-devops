@@ -19,6 +19,6 @@ if __name__ == "__main__":
                 complete += 1
                 tasks.append(task.get('title'))
 
-    print(f"Employee {name} is done with tasks ({complete}/{alltasks}):")
+    print(f"Employee {name} is done with tasks({complete}/{alltasks}):")
     for task in tasks:
         print(f"    {task}")
