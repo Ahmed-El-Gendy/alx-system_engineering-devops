@@ -4,8 +4,7 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    userId = 2
-    '''sys.argv[1]'''
+    userId = sys.argv[1]
     user = requests.get(f"https://jsonplaceholder.typicode.com/users/{userId}")
     name = user.json().get('name')
     todo = requests.get(f"https://jsonplaceholder.typicode.com/todos")
@@ -20,6 +19,6 @@ if __name__ == "__main__":
                 complete += 1
                 tasks.append(task.get('title'))
 
-    print(f"Employee {name} is done with tasks {complete} / {alltasks}:")
+    print(f"Employee {name} is done with tasks ({complete}/{alltasks}):")
     for task in tasks:
         print(f"    {task}")
