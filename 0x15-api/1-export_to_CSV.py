@@ -20,10 +20,5 @@ if __name__ == "__main__":
                 a = task.get('completed')
                 b = task.get('title')
                 out = f'"{userId}","{name}","{a}","{b}"'
-                #print(out)
+                # print(out)
                 writer.writerow([userId, name, a, b])
-
-
-
-
-
