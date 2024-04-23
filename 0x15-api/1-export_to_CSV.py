@@ -13,7 +13,7 @@ if __name__ == "__main__":
     todoj = todo.json()
 
     filename = f"{userId}.csv"
-    with open(filename, 'w', newline='') as file:
+    with open(filename, 'w', mode='w') as file:
         writer = csv.writer(file, delimiter=',', quotechar='"',
                             quoting=csv.QUOTE_ALL, lineterminator='\n')
         for task in todoj:
