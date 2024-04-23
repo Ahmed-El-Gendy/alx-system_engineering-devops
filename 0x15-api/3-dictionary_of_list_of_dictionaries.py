@@ -6,22 +6,19 @@ import sys
 
 
 if __name__ == "__main__":
-    users = requests.get("https://jsonplaceholder.typicode.com/users").json()
-    todos = requests.get("https://jsonplaceholder.typicode.com/todos").json()
-    
-    todo_all = {}
-
+    users = requests.get("https://jsonplaceholder.typicode.com/users")
+    users = users.json()
+    todo = requests.get("https://jsonplaceholder.typicode.com/todos")
+    todoj = todo.json()
+    dic = {}
     for user in users:
-        task_list = []
-        for task in todos:
+        lis = []
+        for task in todoj:
             if task.get('userId') == user.get('id'):
-                task_dict = {
-                    "username": user.get('username'),
-                    "task": task.get('title'),
-                    "completed": task.get('completed')
-                }
-                task_list.append(task_dict)
-        todo_all[user.get('id')] = task_list
-    
+                task_dic = {"task": task.get("title"),
+                            "completed": task.get("completed"),
+                            "username": user.get('username')}
+                lis.append(task_dic)
+        dic[user.get('id')] = lis
     with open('todo_all_employees.json', 'w') as file:
-        json.dump(todo_all, file)
+        json.dump(dic, file)
