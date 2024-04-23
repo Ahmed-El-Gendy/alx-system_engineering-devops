@@ -13,11 +13,11 @@ if __name__ == "__main__":
     todoj = todo.json()
 
     filename = f"{userId}.csv"
-    with open(filename, 'w', mode='w') as file:
+    with open(filename, 'w') as file:
         writer = csv.writer(file, delimiter=',', quotechar='"',
                             quoting=csv.QUOTE_ALL, lineterminator='\n')
         for task in todoj:
             if task.get('userId') == int(userId):
-                a = task.get('completed')
+                a = str(task.get('completed'))
                 b = task.get('title')
                 writer.writerow([userId, name, a, b])
