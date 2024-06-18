@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Queries the Reddit API"""
+"""testing"""
 
 
 def number_of_subscribers(subreddit):
-    """number_of_subscribers"""
+    """Queries the Reddit API"""
     import requests
 
     sub_info = requests.get("https://www.reddit.com/r/{}/about.json"
@@ -13,4 +13,4 @@ def number_of_subscribers(subreddit):
     if sub_info.status_code >= 300:
         return 0
 
-    return response.json().get("data").get("subscribers")
+    return sub_info.json().get("data").get("subscribers")
