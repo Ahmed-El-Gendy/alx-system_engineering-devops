@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""testing"""
+"""Queries the Reddit API"""
 
 
 def number_of_subscribers(subreddit):
-    """Queries the Reddit API"""
+    """number_of_subscribers"""
     import requests
 
-    sub_info = requests.get("https://www.reddit.com/r/{}/about.json"
-                            .format(subreddit),
-                            headers={"User-Agent": "My-User-Agent"},
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    headers = {"User-Agent": "Mozilla/5.0"}
+    response = requests.get(url, headers=headers,
                             allow_redirects=False)
-    if sub_info.status_code >= 300:
+    if response.status_code >= 300:
         return 0
 
-    return sub_info.json().get("data").get("subscribers")
+    return response.json().get("data").get("subscribers")
